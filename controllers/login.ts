@@ -31,7 +31,7 @@ export default {
     const { username, password } = await body.value;
 
     try {
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
       const page = await browser.newPage();
 
       await page.goto(url2, { waitUntil: "networkidle0" });
