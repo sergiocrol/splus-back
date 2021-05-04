@@ -33,7 +33,7 @@ export default {
     try {
       const browser = await puppeteer.launch({
         product: "chrome",
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        args: ["--no-sandbox"],
       });
       const page = await browser.newPage();
 
