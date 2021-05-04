@@ -30,11 +30,11 @@ export default {
     }
     const { username, password } = await body.value;
 
+    const browser = await puppeteer.launch({
+      product: "chrome",
+      args: ["--no-sandbox"],
+    });
     try {
-      const browser = await puppeteer.launch({
-        product: "chrome",
-        args: ["--no-sandbox"],
-      });
       const page = await browser.newPage();
 
       await page.goto(url2, { waitUntil: "networkidle0" });
@@ -111,6 +111,7 @@ export default {
       await browser.close();
     } catch (err) {
       console.log(err);
+      await browser.close();
     }
   },
   communities: async ({ request, response, cookies }: Context) => {
