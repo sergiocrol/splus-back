@@ -1,1 +1,1 @@
-web: deno run --unstable --allow-net=":$PORT" --allow-env --allow-write --allow-read mod.ts
+web: deno run --unstable --allow-net --allow-env --allow-write --allow-read mod.ts
