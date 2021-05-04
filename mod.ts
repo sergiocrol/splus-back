@@ -55,5 +55,5 @@ app.use(isToken);
 if (import.meta.main) {
   log.info(`Starting server on port ${PORT}...`);
   // await app.listen(`${HOST}:${PORT}`);
-  await app.listen(PORT);
+  await app.listen({ port: PORT });
 }
