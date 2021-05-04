@@ -32,7 +32,7 @@ export default {
 
     try {
       const browser = await puppeteer.launch({
-        product: "chrome",
+        product: "firefox",
         args: ["--no-sandbox"],
       });
       const page = await browser.newPage();
