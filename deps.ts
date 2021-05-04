@@ -1,4 +1,4 @@
-import puppeteer from "https://deno.land/x/puppeteer@5.5.1/mod.ts";
+import puppeteer from "https://deno.land/x/puppeteer@9.0.0/mod.ts";
 import { Application, Router, Context } from "https://deno.land/x/oak/mod.ts";
 import * as log from "https://deno.land/std@0.68.0/log/mod.ts";
 import { Bson, MongoClient } from "https://deno.land/x/mongo@v0.22.0/mod.ts";
