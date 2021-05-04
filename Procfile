@@ -1,1 +1,1 @@
-web: deno run --unstable --allow-net --allow-env --allow-write --allow-read mod.ts
+web: PUPPETEER_PRODUCT=firefox deno run -A --unstable https://deno.land/x/puppeteer@5.5.1/install.ts --allow-net --allow-env --allow-write --allow-read mod.ts
