@@ -1,6 +1,6 @@
 import { log, Application, oakCors } from "./deps.ts";
 
-import { PORT, HOST } from "./config/config.ts";
+import { PORT, HOST, FRONT_URL } from "./config/config.ts";
 
 import apiRoutes from "./routes/api.ts";
 import isAdmin from "./middlewares/isAdminMiddleware.ts";
@@ -10,7 +10,7 @@ const app = new Application();
 app.use(
   oakCors({
     // origin: /^.+localhost:(4200)$/,
-    origin: [/^.+localhost:(4200)$/],
+    origin: [/^.+localhost:(4200)$/, FRONT_URL],
     optionsSuccessStatus: 200,
     credentials: true,
   })
