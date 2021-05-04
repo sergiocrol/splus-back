@@ -2,7 +2,7 @@ import db from "../config/db.ts";
 import { User, Status } from "../interfaces/User.ts";
 
 const addActiveUser = async (username: string): Promise<User | null> => {
-  const database = db.getDatabase;
+  const database = db;
   const users = database.collection("users");
   const newUser: User = {
     username,

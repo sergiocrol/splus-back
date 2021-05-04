@@ -50,8 +50,7 @@ export default {
       } else {
         // check if user is in db
         const user: User | null = await getUser(username);
-
-        if (!user) {
+        if (!user?.username) {
           response.status = 404;
           response.body = {
             success: false,
@@ -247,7 +246,7 @@ export default {
     try {
       const user = await addUser(username);
 
-      if (!user) {
+      if (!user?.username) {
         response.status = 409;
         response.body = {
           success: false,
@@ -315,9 +314,9 @@ export default {
 
     const { username } = await body.value;
     try {
-      const user = addActiveUser(username);
+      const user = await addActiveUser(username);
 
-      if (!user) {
+      if (!user?.username) {
         response.status = 409;
         response.body = {
           success: false,
@@ -349,9 +348,9 @@ export default {
 
     const { username, status } = await body.value;
     try {
-      const user = deleteUser(username);
+      const user = await deleteUser(username);
 
-      if (!user) {
+      if (!user?.username) {
         response.status = 409;
         response.body = {
           success: false,
@@ -383,9 +382,8 @@ export default {
 
     const { username, status } = await body.value;
     try {
-      const user = updateUser(username, status);
-
-      if (!user) {
+      const user = await updateUser(username, status);
+      if (user?.matchedCount === 0) {
         response.status = 409;
         response.body = {
           success: false,

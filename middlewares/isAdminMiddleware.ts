@@ -12,7 +12,7 @@ const isAdmin = async ({ request, response, cookies }: Context, next: any) => {
   const [payload, signature, header]: any = await decode(esbApitoken);
   const requestUser = signature.sub;
   try {
-    const user = await getUser(requestUser);
+    const user: any = await getUser(requestUser);
     if (!user?.isAdmin) {
       response.status = 401;
       response.body = {
