@@ -5,7 +5,7 @@ const HOST = env.HOST || "localhost";
 const DB_NAME = env.DB_NAME || "splus_api";
 const DB_HOST = env.DB_HOST || "cluster0-shard-00-01.uqu6c.mongodb.net";
 const DB_USERNAME = env.DB_USERNAME || "sergio";
-const DB_PASSWORD = env.DB_PASSWORD || "";
+const DB_PASSWORD = env.DB_PASSWORD || "mPP0mRFIiOit1xK8";
 const DB_URL = env.DB_URL || "mongodb://localhost:27017";
 const FRONT_URL = env.FRONT_URL;
 

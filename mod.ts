@@ -52,8 +52,9 @@ app.use((ctx) => {
 app.use(isAdmin);
 app.use(isToken);
 
-if (import.meta.main) {
-  log.info(`Starting server on port ${PORT}...`);
-  // await app.listen(`${HOST}:${PORT}`);
-  await app.listen({ port: PORT });
-}
+// if (import.meta.main) {
+//   log.info(`Starting server on port ${PORT}...`);
+//   // await app.listen(`${HOST}:${PORT}`);
+log.info(`Starting server on port ${PORT}...`);
+await app.listen(`${HOST}:${PORT}`);
+// }
