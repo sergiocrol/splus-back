@@ -10,7 +10,7 @@ const app = new Application();
 app.use(
   oakCors({
     // origin: /^.+localhost:(4200)$/,
-    origin: [/^.+localhost:(4200)$/, FRONT_URL],
+    origin: [/^.+localhost:(4200)$/],
     optionsSuccessStatus: 200,
     credentials: true,
   })
